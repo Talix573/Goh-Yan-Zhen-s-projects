@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script src="jquery-3.3.1.min.js"></script>
+<script src="customers.js"></script>
+</head>
+
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div title="Page 1">
+			<p>Student Management System</p>
+		</div>
+		<div id="topnav">
+			<ul>
+				<li>
+					<a href="Index.html">
+						<img src="home-icon-png-white-18.jpg" width="20" height="20">
+					</a>
+				</li>
+				<li>
+					<a href="student.html" style="color: white;">Add Student</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div id="content-wrapper">
+		<div id="content">
+			<form id="customerform">
+				<div>
+					<label>Surname:</label>
+					<div class="field">
+						<input type="text" name="surname" id="surname" required>
+						<span class="error" id="surname_msg" style="display: none">*Surname cannot be empty and can only contain alphabets</span>
+					</div>
+				</div>
+				<div>
+					<label>Name:</label>
+					<div class="field">
+						<input type="text" name="name" id="name" required>
+						<span class="error" id="name_msg" style="display: none">*Name cannot be empty and can only contain alphabets</span>
+					</div>
+				</div>
+				<div>
+					<label>Gender:</label>
+					<input type="radio" name="gender" id="gender" value="Female" required> Female
+					<input type="radio" name="gender" id="gender" value="Male" required> Male
+					<br>
+				</div>
+				<div>
+					<label>Address:</label>
+					<br>
+					<textarea id="address" name="address" rows="4" cols="50" required>*Please enter Address
+					</textarea>
+				</div>
+				<div>
+					<label>Email:</label>
+					<div class="field">
+						<input type="email" name="email" id="email" required>
+					</div>
+				</div>
+				<div>
+				<label>Phone No:</label>
+				<div class="field">
+					<input type="number" name="phone" id="phone" required>
+					<span class="error" id="phone_msg" style="display:none">*Phone cannot be empty</span>
+				</div>
+			</div>
+				
+				<input type="submit" id="InsertStudent" value="Insert">
+			</form>
+		</div>
+	  <div>
+		  <table width="100%" id="tblData" cellpadding="3px" border="1">
+			  <tr>
+				  <th>ID</th>
+				  <th>Surname</th>
+				  <th>Name</th>
+				  <th>Gender</th>
+				  <th>Address</th>
+				  <th>Email</th>
+				  <th>Phone Number</th>
+				  <th>Actions</th>
+			  </tr>
+		  </table>
+	  </div>
+  </div>
+<div id="footer">Copyright &copy; ITE . All rights Reserved</div>
+</div>
+</body>
+</html>

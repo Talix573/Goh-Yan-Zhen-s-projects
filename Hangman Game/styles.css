@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+.monospace {
+  font-family: "Lucida Console", Courier, monospace;
+}
+body {
+	background-image: url("1491013954_k0xrZ.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	margin-top: 40%;
+}

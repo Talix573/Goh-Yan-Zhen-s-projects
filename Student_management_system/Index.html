@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index</title>
+<link rel="stylesheet" type="text/css" href="jquery.slider.css">
+<script src="jquery.min.js"></script>
+<script src="jquery.slider.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="homebuttons.js"></script>
+</head>
+
+<body>
+   <div id="wrapper">
+  <div id="header">
+    <div title="page1">
+      <p>Student Management System</p>
+    </div>
+    <div id="topnav">
+      <ul>
+        <li>
+          <a href="Index.html">
+            <img src="home-icon-png-white-18.jpg" width="20" height="20">
+          </a>
+        </li>
+        <li>
+          <a href="student.html" style="color: white;">Add Students</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="content-wrapper">
+		<div class="sposition">
+            <div class="slider">
+                <div>
+                    <img src="colpci1.jpg" class="colpci1">
+                </div>
+
+                <div>
+                    <img src="colpci2.jpg" class="colpci2">
+                </div>
+
+                <div>
+                    <img src="colpci3.png" class="colpci3">
+                </div>
+        
+                <div>
+                    <img src="colpci4.jpg" class="colpci4">
+                </div>
+            </div>
+        </div>
+	   </div>
+	   <div id="box">
+				<p class="paris">Institute of Technical Education (ITE) in Singapore was established on 1 April 1992 as a post-secondary school institution. An education from ITE provides graduates with good job and career advancement opportunities, as well as opportunities to go further education and training. Adopting a 'One ITE system, Three colleges' Education Model, ITE is ready to provide exciting, high quality, relevant and market-responsive learning for the global economy. ITE offers a wide range of courses to school leavers and working adults, with courses from the Schools of Applied &amp; Health Sciences, Business &amp; Services, Design &amp; Media, Electronics &amp; Info-comm Technology, Engineering and Hospitality.
+				</p>
+			</div>
+	   <div class="flex-container">
+	   <input type="button" value="Close" name="button1" id="button1" class="buttons">
+	   <input type="button" value="Display" name="button2" id="button2" class="buttons">
+		   </div>
+	</div>
+<script>
+    $(".slider").slideshow({
+        width : 900, 
+        height : 325,
+        transition : ['barLeft', 'barRight']
+    });
+</script>
+</body>
+</html>

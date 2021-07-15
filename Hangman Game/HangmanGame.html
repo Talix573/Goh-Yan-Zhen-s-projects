@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<link type="text/css" rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+randomwords = ["Singapore", "Malaysia", "Japan", "Somalia", "England", "Korea"];
+	guessWord = "";
+	selectedWord="";
+	score=0;
+	fails=0;
+	function start()	
+	{
+		var inputs = document.getElementsByTagName("INPUT");
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].disabled = false;
+			document.getElementById("box1").disabled = true;
+			document.getElementById("box2").disabled = true;
+			document.getElementById("score1").disabled = true;
+			document.getElementById("score2").disabled = true;
+        }
+		document.getElementById("box2").value = null;
+		fails="0";
+		num = Math.floor(Math.random() * randomwords.length);
+		selectedWord = randomwords[num].toUpperCase();
+		guessWord = "";
+		for(x=0; x<selectedWord.length;x++)
+		{
+			guessWord += "*";
+		}
+		document.getElementById("box1").value = guessWord;
+		document.getElementById("score1").value = score;
+		document.getElementById("score2").value = fails;
+	}
+	function check(value)
+		{
+			document.getElementById(value).disabled = true;
+			document.getElementById("box2").value = document.getElementById("box2").value + value + ", ";
+			correct=false
+			for(i=0; i<selectedWord.length;i++)
+				{
+					if(value==selectedWord.charAt(i))
+					{
+						guessWord=  guessWord.substr(0 , i) + value + guessWord.substr(i+1);
+						correct=true
+					}
+				}
+				if(correct==false)
+				{
+					fails++;
+					document.getElementById("score2").value = fails;
+				if(fails > 5)
+					{
+						alert("You have exceeded " + fails + " tries, click start to try again !");
+					}
+				}
+			document.getElementById("box1").value = guessWord;
+				if(guessWord==selectedWord)
+					{
+						score++;
+						document.getElementById("score1").value=score;
+						alert("Nice you guessed it, now click start to get a new word again !");
+					}
+		}
+</script>
+</head>
+<body>
+	<h1 align="center"><p class="monospace">The Hangman Game</p></h1>
+<table border="1" cellspacing="0" align="center">
+  <tr>
+    <td colspan="4"> Score:
+      <input type="text" id="score1" disabled>
+      <br/>
+      Fail (6):
+      <input type="text" id="score2" disabled></td>
+    <td colspan="7" align="center"><input type="text" id="box1" value="---Hangman---" disabled>
+      <br/>
+      <input type="text" id="box2" value="Click Start to get a word" disabled>
+	  </td>
+    <td colspan="2" align="center"><input type="button" value="Start" onClick="start()"/></td>
+  </tr>
+  <tr>
+    <td width ="7%" align="center"><input type="button" id="A" value="A" onClick="check('A')"/></td>
+    <td width ="7%" align="center"><input type="button" id="B" value="B" onClick="check('B')"/></td>
+    <td width ="7%" align="center"><input type="button" id="C" value="C" onClick="check('C')"></td>
+    <td width ="7%" align="center"><input type="button" id="D" value="D" onClick="check('D')"></td>
+    <td width ="7%" align="center"><input type="button" id="E" value="E" onClick="check('E')"></td>
+    <td width ="7%" align="center"><input type="button" id="F" value="F" onClick="check('F')"></td>
+    <td width ="7%" align="center"><input type="button" id="G" value="G" onClick="check('G')"></td>
+    <td width ="7%" align="center"><input type="button" id="H" value="H" onClick="check('H')"></td>
+    <td width ="7%" align="center"><input type="button" id="I" value="I" onClick="check('I')"></td>
+    <td width ="7%" align="center"><input type="button" id="J" value="J" onClick="check('J')"></td>
+    <td width ="7%" align="center"><input type="button" id="K" value="K" onClick="check('K')"></td>
+    <td width ="7%" align="center"><input type="button" id="L" value="L" onClick="check('L')"></td>
+    <td width ="7%" align="center"><input type="button" id="M" value="M" onClick="check('M')"></td>
+  </tr>
+  <tr>
+    <td align="center"><input type="button" id="N" value="N" onClick="check('N')"></td>
+    <td align="center"><input type="button" id="O" value="O" onClick="check('O')"></td>
+    <td align="center"><input type="button" id="P" value="P" onClick="check('P')"></td>
+    <td align="center"><input type="button" id="Q" value="Q" onClick="check('Q')"></td>
+    <td align="center"><input type="button" id="R" value="R" onClick="check('R')"></td>
+    <td align="center"><input type="button" id="S" value="S" onClick="check('S')"></td>
+    <td align="center"><input type="button" id="T" value="T" onClick="check('T')"></td>
+    <td align="center"><input type="button" id="U" value="U" onClick="check('U')"></td>
+    <td align="center"><input type="button" id="V" value="V" onClick="check('V')"></td>
+    <td align="center"><input type="button" id="W" value="W" onClick="check('W')"></td>
+    <td align="center"><input type="button" id="X" value="X" onClick="check('X')"></td>
+    <td align="center"><input type="button" id="Y" value="Y" onClick="check('Y')"></td>
+    <td align="center"><input type="button" id="Z" value="Z" onClick="check('Z')"></td>
+  </tr>
+</table>
+</body>
+</html>
